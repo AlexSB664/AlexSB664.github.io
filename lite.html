@@ -1,0 +1,51 @@
+<html lang="”en”">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Name of the app -->
+    <title>Camera App</title>
+
+    <!-- Link to main style sheet -->
+    <link rel="stylesheet" href="lite/style.css" />
+    <script src="lite/interact.min.js"></script>
+    <script src="lite/html2canvas.min.js"></script>
+  </head>
+  <body>
+    <!-- Camera -->
+    <main id="camera">
+      <div id="mydiv" style="width: 75%; height: 50%">
+        <!-- Include a header DIV with the same name as the draggable DIV, followed by "header" -->
+        <img src="lite/disney.png" width="100%" height="100%" />
+      </div>
+
+      <!-- Camera sensor -->
+      <canvas id="camera--sensor"> </canvas>
+
+      <!-- Camera view -->
+      <video id="camera--view" autoplay playsinline></video>
+
+      <!-- Camera output -->
+      <!-- <img src="//:0" alt="" id="camera--output"> -->
+
+      <!-- Camera trigger -->
+      <button id="camera--trigger" data-html2canvas-ignore="true">
+        Take a picture
+      </button>
+    </main>
+
+    <!-- Reference to your JavaScript file -->
+    <script src="lite/app.js"></script>
+    <script>
+      var mydiv_tmp = document.getElementById("mydiv");
+      mydiv_tmp.style.webkitTransform = mydiv_tmp.style.transform =
+        "translate(45px,120px)";
+      mydiv_tmp.setAttribute("data-x", "45");
+      mydiv_tmp.setAttribute("data-y", "120");
+    </script>
+  </body>
+</html>
