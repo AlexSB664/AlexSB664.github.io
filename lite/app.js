@@ -37,8 +37,9 @@ cameraTrigger.onclick = function() {
 /*        let imgageData = canvas.toDataURL("image/png");
         var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");*/
         //window.location = mewData;
-       window.location = canvas.toDataURL("image/png").replace(/^data:image\/png/, "data:application/octet-stream");
-    });
+        //window.location = canvas.toDataURL("image/png").replace(/^data:image\/png/, "data:application/octet-stream");
+        download(canvas.toDataURL("image/png").replace(/^data:image\/png/, "data:application/octet-stream"),"ok-demo.png","application/octet-stream;base64");
+   });
     //console.log(getCanvas);
   // Now browser starts downloading it instead of just showing it
   // track.stop();
@@ -65,18 +66,9 @@ interact('#mydiv')
         target.style.height = event.rect.height + 'px'
 
         // translate when resizing from top or left edges
-        console.log("#### get original ####");
-        console.log(target);
-        console.log(target.style);
-        console.log(target.style.transform);
-        console.log(event);
-        console.log(event.deltaRect);
-        console.log(event.deltaRect.left);
-        console.log(event.deltaRect.top);
         x += event.deltaRect.left
         y += event.deltaRect.top
 
-	console.log(x,y,target.style.transform);
         target.style.webkitTransform = target.style.transform =
           'translate(' + x + 'px,' + y + 'px)'
 
