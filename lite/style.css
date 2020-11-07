@@ -46,6 +46,12 @@ html, body{
   position: absolute;
   z-index: 9;
   border: 1px solid #d3d3d3;
-  bottom: calc(50% - 15%);
-  left: calc(50% - 15%);
+  /*bottom: 350px;
+  left: 350px);*/
+  width: 283.604px;
+  height: 414.042px;
+  transform: translate(69.1071px, 164.314px);
+  touch-action: none;
+  /*This makes things *much* easier*/
+  box-sizing: border-box;
 }
