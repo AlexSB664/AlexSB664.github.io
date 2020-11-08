@@ -27,22 +27,25 @@ cameraTrigger.onclick = function() {
     cameraSensor.width = cameraView.videoWidth;
     cameraSensor.height = cameraView.videoHeight;
     cameraSensor.getContext("2d").drawImage(cameraView, 0, 0);
+    let div_tmp = document.getElementById("mydiv");
    // cameraOutput.src = cameraSensor.toDataURL("image/webp");
    // cameraOutput.classList.add("taken");
    // let element = $("#imageDIV"); // global variable
     //var getCanvas; // global variable
+    div_tmp.style.border = "0px";
     document.body.style.backgroundImage = cameraSensor.toDataURL("image/webp");
     html2canvas(document.getElementById("camera"),{ removeContainer: false, backgroundColor: null}).then(canvas => {
         //document.body.appendChild(canvas.id="canvas-out");
-/*        let imgageData = canvas.toDataURL("image/png");
+	/* let imgageData = canvas.toDataURL("image/png");
         var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");*/
         //window.location = mewData;
         //window.location = canvas.toDataURL("image/png").replace(/^data:image\/png/, "data:application/octet-stream");
         download(canvas.toDataURL("image/png").replace(/^data:image\/png/, "data:application/octet-stream"),"ok-demo.png","application/octet-stream;base64");
    });
+    div_tmp.style.border = "1px solid #d3d3d3";
     //console.log(getCanvas);
-  // Now browser starts downloading it instead of just showing it
-  // track.stop();
+    // Now browser starts downloading it instead of just showing it
+    // track.stop();
 };
 
 // Start the video stream when the window loads
